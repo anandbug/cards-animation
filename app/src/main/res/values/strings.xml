@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Cards Rendering</string>
+	<string name="overall">Overall</string>
+	<string name="spend_value">Spend value: ₹ 65,000</string>
+	<string name="limit_value">Credit limit: ₹ 1,00,000</string>
+	<string name="shopping_value">Shopping value: ₹ 30,000</string>
+	<string name="expenses">Expenses</string>
+	<string name="other_value">Other: ₹ 15,000</string>
+	<string name="medicine_value">Medicine: ₹ 20,000</string>
+	<string name="last_3_month">Last 3 months</string>
+	<string name="last_month_value">Nov\'18\n₹ 50,000</string>
+	<string name="last_second_month_value">Oct\'18\n₹ 75,000</string>
+	<string name="last_third_month_value">Sep\'18\n₹ 35,000</string>
+</resources>

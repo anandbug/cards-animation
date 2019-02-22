@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:animateLayoutChanges="true"
+		android:layoutAnimation="@anim/layout_slide_in_right"
+		tools:context=".MainActivity">
+
+	<androidx.cardview.widget.CardView
+			android:id="@+id/cardOne"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			app:cardCornerRadius="6dp"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toTopOf="@+id/cardTwo"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@drawable/card_one_bg"
+				android:animateLayoutChanges="true"
+				android:layoutAnimation="@anim/layout_slide_in_left"
+				android:padding="8dp">
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/cardOneTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/overall"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/spendValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/spend_value"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintBottom_toTopOf="@+id/overallProgress"
+					app:layout_constraintTop_toBottomOf="@+id/cardOneTitle"
+					app:layout_constraintVertical_chainStyle="packed"/>
+
+			<ProgressBar
+					android:id="@+id/overallProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:max="100"
+					android:progress="65"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintBottom_toTopOf="@+id/limitValue"
+					app:layout_constraintTop_toBottomOf="@+id/spendValue"
+					tools:progress="30"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/limitValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/limit_value"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/overallProgress"
+					app:layout_constraintStart_toStartOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+	<androidx.cardview.widget.CardView
+			android:id="@+id/cardTwo"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			app:cardCornerRadius="6dp"
+			app:layout_constraintTop_toBottomOf="@+id/cardOne"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toTopOf="@+id/cardThree"
+			android:layoutAnimation="@anim/layout_slide_in_left"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@drawable/card_two_bg"
+				android:animateLayoutChanges="true"
+				android:layoutAnimation="@anim/layout_slide_in_left"
+				android:padding="8dp">
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/cardTwoTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/expenses"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/shoppingValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/shopping_value"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintBottom_toTopOf="@+id/shoppingProgress"
+					app:layout_constraintTop_toBottomOf="@+id/cardTwoTitle"
+					app:layout_constraintVertical_chainStyle="packed"/>
+
+			<ProgressBar
+					android:id="@+id/shoppingProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:max="65"
+					android:progress="30"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintBottom_toTopOf="@+id/medicineValue"
+					app:layout_constraintTop_toBottomOf="@+id/shoppingValue"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/medicineValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/medicine_value"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintBottom_toTopOf="@+id/medicineProgress"
+					app:layout_constraintTop_toBottomOf="@+id/shoppingProgress"
+					app:layout_constraintVertical_chainStyle="packed"/>
+
+			<ProgressBar
+					android:id="@+id/medicineProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:max="65"
+					android:progress="20"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintBottom_toTopOf="@+id/otherValue"
+					app:layout_constraintTop_toBottomOf="@+id/medicineValue"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/otherValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/other_value"
+					app:layout_constraintStart_toStartOf="parent"
+					android:layout_marginBottom="4dp"
+					app:layout_constraintBottom_toTopOf="@+id/otherProgress"
+					app:layout_constraintTop_toBottomOf="@+id/medicineProgress"
+					app:layout_constraintVertical_chainStyle="packed"/>
+
+			<ProgressBar
+					android:id="@+id/otherProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:max="65"
+					android:progress="15"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/otherValue"/>
+
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+	<androidx.cardview.widget.CardView
+			android:id="@+id/cardThree"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			app:cardCornerRadius="6dp"
+			app:layout_constraintTop_toBottomOf="@+id/cardTwo"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:layout_marginBottom="8dp">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:background="@drawable/card_three_bg"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:animateLayoutChanges="true"
+				android:layoutAnimation="@anim/layout_slide_up"
+				android:padding="8dp">
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/cardThreeTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/last_3_month"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/lastMonthValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/last_month_value"
+					android:gravity="center_horizontal"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toStartOf="@+id/secondLastMonthValue"
+					app:layout_constraintHorizontal_chainStyle="spread"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/secondLastMonthValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_horizontal"
+					android:text="@string/last_second_month_value"
+					app:layout_constraintStart_toEndOf="@+id/lastMonthValue"
+					app:layout_constraintBaseline_toBaselineOf="@+id/lastMonthValue"
+					app:layout_constraintEnd_toStartOf="@+id/thirdLastMonthValue"/>
+
+			<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/thirdLastMonthValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_horizontal"
+					android:text="@string/last_third_month_value"
+					app:layout_constraintStart_toEndOf="@+id/secondLastMonthValue"
+					app:layout_constraintBaseline_toBaselineOf="@+id/secondLastMonthValue"
+					app:layout_constraintEnd_toEndOf="parent"/>
+
+			<ProgressBar
+					android:id="@+id/lastMonthProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="0dp"
+					android:max="100"
+					android:progress="50"
+					android:rotation="270"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="@+id/lastMonthValue"
+					app:layout_constraintTop_toBottomOf="@+id/cardThreeTitle"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintBottom_toTopOf="@+id/lastMonthValue"
+					app:layout_constraintEnd_toEndOf="@+id/lastMonthValue"
+					android:layout_marginTop="8dp"/>
+
+			<ProgressBar
+					android:id="@+id/secondLastMonthProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="0dp"
+					android:max="100"
+					android:progress="75"
+					android:rotation="270"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="@+id/secondLastMonthValue"
+					app:layout_constraintTop_toBottomOf="@+id/cardThreeTitle"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintBottom_toTopOf="@+id/secondLastMonthValue"
+					app:layout_constraintEnd_toEndOf="@+id/secondLastMonthValue"
+					android:layout_marginTop="8dp"/>
+
+			<ProgressBar
+					android:id="@+id/thirdLastMonthProgress"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="0dp"
+					android:rotation="270"
+					android:progressBackgroundTint="@android:color/transparent"
+					app:layout_constraintStart_toStartOf="@+id/thirdLastMonthValue"
+					app:layout_constraintTop_toBottomOf="@+id/cardThreeTitle"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintBottom_toTopOf="@+id/thirdLastMonthValue"
+					app:layout_constraintEnd_toEndOf="@+id/thirdLastMonthValue"
+					android:progress="35"
+					android:max="100"
+					android:animationResolution="300"
+					android:layout_marginTop="8dp"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
